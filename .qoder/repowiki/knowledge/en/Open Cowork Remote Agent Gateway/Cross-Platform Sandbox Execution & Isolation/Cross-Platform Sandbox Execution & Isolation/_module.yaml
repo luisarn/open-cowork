@@ -1,0 +1,10 @@
+schema_version: 1
+module_path: main_process/sandbox_execution/native_common
+title: Cross-Platform Sandbox Execution & Isolation
+scope:
+  - src/main/sandbox/
+source_files: []
+depends_on: []
+related_to:
+  - path: main_process/sandbox_execution/wsl_agent
+  - path: main_process/sandbox_execution/lima_agent

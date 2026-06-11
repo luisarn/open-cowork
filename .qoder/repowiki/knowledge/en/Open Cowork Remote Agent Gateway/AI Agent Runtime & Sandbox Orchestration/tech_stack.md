@@ -1,0 +1,4 @@
+- **Sandboxing**: WSL2 (Windows) and Lima (macOS) for isolated Linux environments.
+- **MCP SDK**: `@modelcontextprotocol/sdk` for client-side server interactions.
+- **Dynamic Presets**: `@mariozechner/pi-ai` for runtime model registry integration.
+- **Storage**: `electron-store` with custom AES-GCM encryption and key rotation.

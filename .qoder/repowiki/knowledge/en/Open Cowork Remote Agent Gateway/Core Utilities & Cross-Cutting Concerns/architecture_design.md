@@ -1,0 +1,6 @@
+- Centralized logging via `logger.ts` using Node's `AsyncLocalStorage` for context propagation (trace/session IDs), with file rotation and structured output.
+- Error normalization in `error-utils.ts` provides safe extraction of messages/stacks from unknown error types.
+- Secure storage in `store-encryption.ts` handles electron-store encryption with scrypt-based key derivation and automatic legacy key rotation.
+- Resilience patterns in `retry.ts` implement exponential backoff for async operations.
+- Diagnostic aggregation in `diagnostics-summary.ts` collects sanitized session/runtime data for troubleshooting, including path redaction.
+- Auxiliary utilities handle shell resolution (`shell-resolver.ts`), artifact parsing (`artifact-parser.ts`), workspace file scanning (`recent-workspace-files.ts`), and event routing (`client-event-utils.ts`).

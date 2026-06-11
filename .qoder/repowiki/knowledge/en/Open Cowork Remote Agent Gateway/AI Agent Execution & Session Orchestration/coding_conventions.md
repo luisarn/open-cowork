@@ -1,0 +1,4 @@
+- Use of 'synthetic model' fallbacks in pi-model-resolution.ts when a requested model is not found in the pi-ai registry, allowing support for custom or local models.
+- Implementation of a 'LoopGuard' in agent-runner-loop-guard.ts that tracks tool-call hashes and frequencies to detect and abort infinite agent loops.
+- Sanitization of filesystem paths in output by replacing real sandbox paths with a virtual '/workspace' prefix to maintain environment abstraction.
+- Secure handling of sudo commands by injecting passwords via stdin pipes rather than command-line arguments to prevent exposure in process lists.

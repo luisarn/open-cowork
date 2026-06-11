@@ -1,0 +1,4 @@
+- **Session Management**: `ClaudeAgentRunner` orchestrates agent turns, managing active controllers and trace updates for the UI.
+- **Sandbox Abstraction**: `SandboxAdapter` provides a platform-agnostic interface for command execution, automatically selecting WSL2 on Windows or Lima on macOS for isolation, with a native fallback.
+- **MCP Integration**: `MCPManager` handles the lifecycle of Model Context Protocol servers, supporting stdio, SSE, and Streamable HTTP transports with OAuth retry logic.
+- **Configuration Persistence**: `ConfigStore` and `MCPConfigStore` use `electron-store` with encryption for API keys and server definitions, supporting multiple config sets and dynamic model presets via `pi-ai`.

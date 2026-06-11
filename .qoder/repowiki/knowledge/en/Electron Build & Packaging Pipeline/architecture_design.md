@@ -1,0 +1,4 @@
+- **Hook-based Integration**: Implements `electron-builder` lifecycle hooks (`afterPack`, `afterSign`, `afterAllArtifactBuild`) via `after-pack.js`, `notarize.js`, and `compress-dmg.js` to intercept and customize the build process.
+- **Resource Preparation Layer**: Dedicated scripts (`prepare-python.js`, `download-node.js`, `prepare-gui-tools.js`) fetch and bundle platform-specific native runtimes (Python, Node.js) and CLI utilities into the `resources/` directory before packaging.
+- **Asset Bundling & Validation**: Uses `esbuild` in `bundle-mcp.js` to create self-contained CommonJS bundles for MCP servers, with `pre-build-check.js` validating all required artifacts exist before the final build starts.
+- **Platform-Specific Logic**: Isolates Windows-specific cache management and legacy cleanup in `build-windows.js` and `build-windows-artifacts.js`, while macOS-specific tasks (DMG compression, notarization, GUI tool bundling) are handled by separate modules.

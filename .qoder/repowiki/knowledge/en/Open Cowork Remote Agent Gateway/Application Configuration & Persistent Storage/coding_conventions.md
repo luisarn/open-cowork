@@ -1,0 +1,5 @@
+- All base URL normalization functions strip trailing slashes and endpoint suffixes (e.g., `/chat/completions`, `/v1`) before returning, ensuring consistent client construction across providers.
+- Credential resolution functions return nullable result objects (`ResolvedOpenAICredentials | null`) rather than throwing, allowing callers to handle missing keys uniformly at the call site.
+- Configuration normalization uses typed guard predicates (`isProviderType`, `isCustomProtocol`, `isProfileKey`, `isAppTheme`) combined with fallback defaults to coerce untrusted persisted data into valid `AppConfig` shapes.
+- Cache keys for network-facing operations incorporate SHA-256 hashes of sensitive values (API keys) rather than storing plaintext, preventing credential leakage through cache inspection.
+- Dynamic SQL column additions validate identifiers against `/^[a-zA-Z_][a-zA-Z0-9_]*$/` and restrict type suffixes to an allowlist (`TEXT NOT NULL DEFAULT`, `INTEGER DEFAULT`, etc.) to prevent SQL injection in schema migrations.

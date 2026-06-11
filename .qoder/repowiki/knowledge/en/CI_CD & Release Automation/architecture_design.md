@@ -1,0 +1,5 @@
+- Entry points are GitHub Actions workflows in `.github/workflows/`, covering CI (`ci.yml`), multi-OS release pipelines (`release.yml`), website deployment (`deploy-website.yml`), and Homebrew tap updates (`update-homebrew.yml`).
+- Dependency management is centralized in `dependabot.yml`, which groups npm and GitHub Actions updates by risk level (dev/production patch/minor) and ignores major Electron upgrades.
+- Release metadata and changelog generation are configured via `release.yml`, mapping conventional commit labels to categorized sections.
+- Code ownership boundaries are defined in `CODEOWNERS`, routing reviews for CI, build scripts, and core source modules to the `@OpenCoworkAI/core` team.
+- AI automation workflows (`codex-pr-review.yml`, `issue-auto-response.yml`) integrate external LLM providers (OpenAI/DeepSeek) using shared prompt templates from `.github/prompts/` and custom Node.js scripts in `.github/scripts/`.

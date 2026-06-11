@@ -1,0 +1,4 @@
+- The root `vite.config.ts` defines the dual-entry build pipeline, separating the `main_process` (Node/Electron) and `renderer_ui` (React) into distinct output directories (`dist-electron` and `dist`) while sharing type contracts from `shared_types`.
+- `electron-builder.yml` acts as the central packaging manifest, orchestrating the inclusion of platform-specific native runtimes (Node, Python) and agent binaries (WSL, Lima) produced by child modules into the final distributable artifacts.
+- Cross-process communication is standardized via the `shared_types` module, which defines the IPC boundaries enforced by the Electron preload script configured in the Vite pipeline.
+- The root `package.json` provides unified lifecycle scripts (e.g., `dev`, `build`) that sequentially trigger child-module-specific compilation steps (such as `build:wsl-agent` and `build:lima-agent`) before initiating the final Electron packaging.

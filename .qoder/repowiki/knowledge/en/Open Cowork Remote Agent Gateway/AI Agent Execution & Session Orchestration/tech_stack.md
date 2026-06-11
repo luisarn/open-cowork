@@ -1,0 +1,1 @@
+Uses @mariozechner/pi-coding-agent SDK for agent session management and tool execution; Uses @mariozechner/pi-ai for multi-provider model resolution and API routing; Integrates with WSL (Windows Subsystem for Linux) and Lima (macOS virtualization) for sandboxed code execution.

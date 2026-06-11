@@ -1,0 +1,5 @@
+- **Adapter Pattern**: `SandboxAdapter` (`sandbox-adapter.ts`) acts as the central entry point, dynamically selecting between `WSLBridge`, `LimaBridge`, or `NativeExecutor` based on platform and availability.
+- **Bridge/Agent Architecture**: Platform-specific bridges (`wsl-bridge.ts`, `lima-bridge.ts`) communicate with isolated Node.js agents (`wsl-agent/index.ts`, `lima-agent/index.ts`) via JSON-RPC over stdin/stdout, ensuring execution happens inside the VM/container.
+- **Security Layers**: `PathGuard` and `PathResolver` enforce strict path containment using `isPathWithinRoot` to prevent directory traversal and symlink escapes. `NativeExecutor` includes command-level regex filtering for dangerous patterns.
+- **Session Management**: `SandboxSync` manages isolated workspace copies in WSL/Lima using `rsync`, mapping session IDs to sandboxed directories to prevent cross-contamination.
+- **Bootstrap Service**: `SandboxBootstrap` handles early-stage environment provisioning (installing Node.js/Python in WSL/Lima) and caches status to optimize startup.

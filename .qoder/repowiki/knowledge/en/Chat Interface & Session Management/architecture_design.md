@@ -1,0 +1,5 @@
+- **State Management**: Centralized Zustand store (`src/renderer/store/index.ts`) manages global app state, per-session message history, execution clocks, and UI flags. Specialized selectors (`src/renderer/store/selectors.ts`) use `useShallow` to optimize re-renders.
+- **Rendering Pipeline**: `ChatView` orchestrates the main layout. `MessageCard` delegates block-level rendering to `ContentBlockView`, which dispatches to specialized sub-components (`CodeBlock`, `ToolUseBlock`, etc.) or a lazy-loaded `MessageMarkdown` for rich text.
+- **Configuration & Settings**: A tabbed `SettingsPanel` hosts modular configuration views (API, Sandbox, Connectors). `ConfigModal` handles initial API setup with provider-specific guidance and connection testing.
+- **Context & Sidebar**: `ContextPanel` displays session artifacts, MCP connector status, and working directory info. `Sidebar` manages session navigation, grouping, and bulk operations.
+- **Electron Integration**: Components interact with the main process via `window.electronAPI` for file system access, external links, and remote control features.

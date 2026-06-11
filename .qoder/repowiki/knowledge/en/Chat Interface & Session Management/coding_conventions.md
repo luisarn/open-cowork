@@ -1,0 +1,4 @@
+- Use `memo` and `useMemo` extensively in rendering-heavy components like `ContentBlockView` and `MessageCard` to prevent unnecessary re-renders during streaming updates.
+- Delegate complex block rendering logic from `ContentBlockView` to dedicated sub-components (e.g., `ToolUseBlock`, `ThinkingBlock`) to maintain single-responsibility principles.
+- Implement lazy loading for heavy components like `MessageMarkdown` using `React.lazy` and `Suspense` to improve initial load performance.
+- Use centralized selectors in `src/renderer/store/selectors.ts` with `useShallow` to subscribe to specific slices of the Zustand store, avoiding broad re-renders.

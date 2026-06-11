@@ -1,0 +1,4 @@
+- Workflows pin GitHub Action dependencies to full-length commit SHAs rather than semantic version tags to ensure supply chain security.
+- CI and release jobs enforce concurrency controls using `concurrency` groups to cancel in-progress runs for the same branch or PR.
+- Release builds include post-package smoke tests that verify the existence of critical resources (MCP servers, Node binaries) before uploading artifacts.
+- Automated bot interactions (PR reviews, issue responses) check for existing bot comments or reviews to prevent duplicate processing.

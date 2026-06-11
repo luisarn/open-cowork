@@ -1,0 +1,3 @@
+- **Local Deployment**: `scripts/deploy-local.sh` uses the GitHub CLI (`gh`) to download the latest CI-built macOS artifact and install it locally, replacing the existing app.
+- **Native Runtime Prep**: `npm run prepare:python` and `npm run prepare:gui-tools` must be run to download/compile native dependencies (Python, cliclick) before the main build.
+- **Windows Cache Isolation**: `scripts/build-windows.js` redirects Electron and npm caches to a local `.build-cache` directory to prevent permission issues and speed up CI/CD.

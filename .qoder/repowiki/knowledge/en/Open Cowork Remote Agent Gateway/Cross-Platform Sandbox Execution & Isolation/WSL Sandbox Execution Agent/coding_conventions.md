@@ -1,0 +1,4 @@
+- Logs diagnostic messages to stderr using `console.error` to keep stdout reserved exclusively for JSON-RPC communication.
+- Validates all file system paths against a configured workspace root using `isPathWithinRoot` before performing any I/O operations.
+- Resolves symlinks using `fs.realpathSync` and verifies containment of the resolved path or its nearest existing ancestor to prevent symlink escape attacks.
+- Blocks potentially dangerous shell commands (e.g., recursive rm, dd, mkfs) using a predefined list of regular expressions in `validateCommand`.

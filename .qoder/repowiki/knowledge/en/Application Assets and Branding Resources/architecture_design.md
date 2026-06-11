@@ -1,0 +1,4 @@
+- Contains multi-resolution icon sets in `icon.iconset/` for macOS compatibility.
+- Includes platform-specific binaries: `icon.icns` (macOS), `icon.ico` (Windows), and `entitlements.mac.plist` for macOS code signing.
+- Provides Windows legacy cleanup utilities (`Open-Cowork-Legacy-Cleanup.cmd`, `.ps1`) and NSIS installer configuration (`installer.nsh`).
+- Stores branding assets such as `logo.png`, `WeChat.jpg`, and social media previews.

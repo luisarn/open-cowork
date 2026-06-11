@@ -1,0 +1,1 @@
+electron-store with custom AES-256-GCM encryption wrapper (`store-encryption.ts`); better-sqlite3 with WAL journaling; pi-ai registry (`@mariozechner/pi-ai`) for dynamic model preset discovery via async ESM import; OpenAI SDK (`openai`) and Anthropic SDK (`@anthropic-ai/sdk`) for auth/model probing; Google GenAI SDK (`@google/genai`) for Gemini key verification.

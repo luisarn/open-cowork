@@ -1,0 +1,16 @@
+schema_version: 1
+module_path: main_process/memory_system
+title: Agent Long-Term Memory Orchestrator
+scope:
+  - src/main/memory/
+source_files: []
+depends_on: []
+related_to:
+  - path: main_process/claude_agent_runtime
+  - path: main_process/session_management
+  - path: main_process/config_management
+  - path: main_process/utilities
+  - path: main_process/mcp_protocol
+  - path: main_process/entry_points
+  - path: main_process/tool_execution
+  - path: main_process/remote_connectivity

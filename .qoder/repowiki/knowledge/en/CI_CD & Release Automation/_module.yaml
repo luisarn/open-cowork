@@ -1,0 +1,11 @@
+schema_version: 1
+module_path: ci_config
+title: CI/CD & Release Automation
+scope:
+  - .github/
+source_files: []
+depends_on: []
+related_to:
+  - path: build_scripts
+  - path: docs_website
+  - path: resources_assets

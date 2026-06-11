@@ -1,0 +1,4 @@
+- **Python**: Primary scripting language (`defusedxml`, `lxml`, `openpyxl`, `python-pptx`, `Pillow`).
+- **Node.js**: Used for DOCX creation via `docx` library and PPTX creation via `pptxgenjs` in the `html2pptx` workflow.
+- **LibreOffice**: Headless instance for XLSX formula recalculation and PPTX/PDF conversion.
+- **Pandoc & Poppler**: Used for text extraction and image conversion in DOCX/PDF workflows.

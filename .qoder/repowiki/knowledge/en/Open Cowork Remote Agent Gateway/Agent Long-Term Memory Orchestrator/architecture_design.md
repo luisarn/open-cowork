@@ -1,0 +1,4 @@
+- Integrates with the agent runtime via `MemoryExtension`, which implements `beforeSessionRun` and `afterSessionRun` hooks to inject memory context and trigger ingestion.
+- Decouples ingestion from execution using `MemoryIngestionQueue`, ensuring non-blocking session performance while processing core identity updates and experience chunking.
+- Implements a progressive retrieval loop in `MemoryService.buildExperienceContext`, where `MemoryNavigator` uses LLM-driven decisions to dynamically expand summaries into raw transcripts or detailed chunks based on query relevance.
+- Unifies storage access through `MemoryRetriever`, which aggregates lexical search results from both `CoreMemoryStore` (global identity) and `ExperienceMemoryStore` (session-based evidence) into a single ranked context block.

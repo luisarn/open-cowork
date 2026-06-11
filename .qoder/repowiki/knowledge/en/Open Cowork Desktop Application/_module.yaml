@@ -1,0 +1,36 @@
+schema_version: 1
+module_path: ''
+title: Open Cowork Desktop Application
+scope:
+  - readme.md
+  - README_zh.md
+  - CONTRIBUTING.md
+  - CODE_OF_CONDUCT.md
+  - SECURITY.md
+  - ROADMAP.md
+  - AGENTS.md
+  - llms.txt
+  - .gitignore
+  - .editorconfig
+  - .gitattributes
+  - .npmrc
+  - .prettierrc
+  - .eslintrc.cjs
+  - commitlint.config.cjs
+  - electron-builder.yml
+  - index.html
+  - package.json
+  - package-lock.json
+  - postcss.config.js
+  - tailwind.config.js
+  - tsconfig.json
+  - tsconfig.node.json
+  - vite.config.ts
+  - vitest.config.mts
+  - .env.example
+  - .nvmrc
+  - CHANGELOG.md
+  - LICENSE
+source_files: []
+depends_on: []
+related_to: []

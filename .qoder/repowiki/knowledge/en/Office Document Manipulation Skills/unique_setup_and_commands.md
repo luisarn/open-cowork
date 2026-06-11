@@ -1,0 +1,3 @@
+- **Skill Packaging**: Skills are packaged using `.claude/skills/skill-creator/scripts/package_skill.py <path>` which validates frontmatter and structure before zipping.
+- **XLSX Recalculation**: Requires LibreOffice. `recalc.py` automatically sets up a Basic macro in the user's LibreOffice profile on first run.
+- **PPTX HTML Workflow**: Requires extracting `html2pptx.tgz` (`tar -xzf html2pptx.tgz -C html2pptx`) and installing global Node dependencies (`pptxgenjs`, `playwright`).

@@ -1,0 +1,4 @@
+- Use 'Claude' as the default author name for all tracked changes and comments in DOCX/PPTX editing workflows.
+- Preserve smart quotes as XML entities (e.g., `&#x2019;`) during DOCX unpacking and editing to prevent tokenization artifacts.
+- Validate all XML edits against ISO-IEC29500 XSD schemas using `BaseSchemaValidator` before packing DOCX/PPTX files.
+- Use imperative, concise instructions in `SKILL.md` bodies, moving detailed reference material to `references/` files to minimize context window usage.

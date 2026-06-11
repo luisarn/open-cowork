@@ -1,0 +1,3 @@
+- Release pipeline requires manual tag pushes (`v*`) to trigger multi-stage builds on macOS and Windows runners.
+- Homebrew tap updates automatically compute SHA256 checksums from released DMGs and push changes to an external tap repository using `HOMEBREW_TAP_TOKEN`.
+- AI review workflows dynamically select between OpenAI Codex and DeepSeek based on `OPENAI_BASE_URL` configuration, requiring specific secrets for API access.

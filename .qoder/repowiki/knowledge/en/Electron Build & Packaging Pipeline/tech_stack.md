@@ -1,0 +1,4 @@
+- **esbuild**: Used for high-performance bundling of TypeScript MCP servers into single-file CommonJS outputs.
+- **@electron/notarize**: Handles macOS Gatekeeper notarization using Apple ID credentials.
+- **hdiutil**: Native macOS utility leveraged for creating ULMO (LZMA) compressed DMGs with better compression ratios than default zlib.
+- **python-build-standalone**: Sources standalone Python distributions to avoid system dependencies in the bundled app.

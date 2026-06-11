@@ -1,0 +1,4 @@
+- All path validation routines resolve symlinks using `fs.realpathSync` and verify containment against the workspace root to prevent symlink escape attacks.
+- Platform-specific bridges implement the `SandboxExecutor` interface, ensuring a consistent API for `executeCommand`, `readFile`, and `writeFile` across all modes.
+- Dangerous command patterns (e.g., `rm -rf /`, `curl | bash`) are blocked via regex checks in both the main process executors and the isolated agents.
+- Session IDs are validated against strict alphanumeric patterns before being used in shell commands to prevent command injection.

@@ -1,0 +1,4 @@
+- Entry point: `index.ts` implements a `SandboxAgent` class that listens for JSON-RPC requests on stdin/stdout.
+- Security boundary: `path-containment.ts` provides self-contained path normalization and containment checks (supporting POSIX, Windows drive, and UNC paths) to prevent directory traversal and symlink escapes.
+- Interface: Exposes methods like `executeCommand`, `readFile`, `writeFile`, and `runClaudeCode` through a JSON-RPC switch in `handleRequest`.
+- Build: Compiled via `tsconfig.json` targeting ES2020/CommonJS, outputting to a dedicated `dist-wsl-agent` directory.

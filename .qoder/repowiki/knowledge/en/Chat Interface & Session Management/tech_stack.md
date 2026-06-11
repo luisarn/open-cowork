@@ -1,0 +1,4 @@
+- **State**: Zustand with `useShallow` for optimized subscriptions.
+- **Markdown**: `react-markdown` with `remark-math`, `remark-gfm`, `rehype-sanitize`, and `rehype-katex` for secure, feature-rich rendering.
+- **Icons**: `lucide-react` for consistent iconography.
+- **Internationalization**: `react-i18next` for multi-language support.

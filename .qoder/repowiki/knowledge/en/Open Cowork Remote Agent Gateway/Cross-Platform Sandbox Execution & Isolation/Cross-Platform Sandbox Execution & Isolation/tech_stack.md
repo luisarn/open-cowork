@@ -1,0 +1,3 @@
+- **JSON-RPC 2.0**: Used for inter-process communication between the Electron main process and sandbox agents.
+- **WSL2 & Lima**: Leverages Windows Subsystem for Linux and Lima (macOS) for lightweight VM-based isolation.
+- **rsync**: Used in `SandboxSync` for efficient file synchronization between host and sandbox environments.

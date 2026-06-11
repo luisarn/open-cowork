@@ -1,0 +1,3 @@
+- Scripts use a `PROJECT_ROOT` constant derived from `path.join(__dirname, '..')` to ensure consistent path resolution relative to the workspace root.
+- File system operations that may fail due to locking (especially on Windows) implement retry loops with exponential backoff or fixed delays (e.g., `removePathWithRetries`).
+- Native binary bundling scripts detect the host architecture (`process.arch`) and target specific subdirectories (e.g., `darwin-arm64`, `win32-x64`) to support multi-arch builds.

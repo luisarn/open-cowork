@@ -1,0 +1,4 @@
+- Use of singleton patterns with lazy initialization for core services like `SandboxAdapter` and `MCPManager` to ensure single points of control.
+- Platform-specific path resolution and command execution logic encapsulated within bridge classes (`WSLBridge`, `LimaBridge`) to maintain a clean adapter interface.
+- Defensive environment variable merging in `MCPManager` to ensure packaged Electron apps have access to necessary shell paths and tools.
+- Automatic migration of legacy MCP server configurations (e.g., switching from `tsx` to bundled `node` in production) during connection setup.

@@ -1,0 +1,2 @@
+- `npm run dev`: Orchestrates the concurrent startup of the Vite dev server, Electron main process, and required agent builds (WSL/Lima) for a full local development environment.
+- `npm run build:win/mac/linux`: Platform-specific build wrappers that execute the full dependency preparation pipeline (Node/Python runtimes, agent compilation) before invoking `electron-builder`.

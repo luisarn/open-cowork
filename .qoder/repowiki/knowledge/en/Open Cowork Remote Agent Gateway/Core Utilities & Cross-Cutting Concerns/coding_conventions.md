@@ -1,0 +1,4 @@
+- Exported functions use explicit return type annotations for public APIs.
+- File system paths are normalized and redacted (e.g., replacing home/temp dirs with placeholders) before inclusion in diagnostic outputs.
+- Error handling in catch blocks uses `unknown` type with helper functions like `getErrorMessage` instead of `any` casts.
+- Utility modules expose pure functions or stateless helpers, avoiding module-level mutable state except for controlled singletons like the logger stream.
