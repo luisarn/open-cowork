@@ -1,0 +1,30 @@
+{
+  "$schema": "./brand-schema.json",
+  "id": "open-cowork",
+  "productName": "Open Cowork",
+  "appId": "com.opencowork.app",
+  "copyright": "Copyright © 2026 Open Cowork Team",
+  "colors": {
+    "primary": "#2563EB",
+    "primaryHover": "#1D4ED8",
+    "accent": "#F59E0B",
+    "background": "#F8FAFC",
+    "surface": "#FFFFFF",
+    "sidebarActiveBg": "#2563EB",
+    "sidebarActiveText": "#FFFFFF",
+    "textPrimary": "#111827",
+    "textSecondary": "#6B7280"
+  },
+  "features": {
+    "gradientTitles": false
+  },
+  "assets": {
+    "iconMac": "icon.icns",
+    "iconWin": "icon.ico",
+    "iconLinux": "icon.png",
+    "tray": "tray-icon.png",
+    "trayMac": "tray-iconTemplate.png",
+    "trayWin": "tray-icon.ico",
+    "logo": "logo.png"
+  }
+}

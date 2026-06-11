@@ -41,6 +41,7 @@ import { SandboxSync } from './sandbox/sandbox-sync';
 import { WSLBridge } from './sandbox/wsl-bridge';
 import { LimaBridge } from './sandbox/lima-bridge';
 import { getSandboxBootstrap } from './sandbox/sandbox-bootstrap';
+import { applyMainBranding } from './branding/brand-main';
 import type { MCPServerConfig } from './mcp/mcp-manager';
 import type {
   ClientEvent,
@@ -310,7 +311,7 @@ function setupTray() {
   }
 
   tray = new Tray(resolvedIconPath);
-  tray.setToolTip('Open Cowork');
+  tray.setToolTip(app.name);
 
   const contextMenu = Menu.buildFromTemplate([
     {
@@ -809,10 +810,10 @@ app
     setDevLogsEnabled(enableDevLogs);
 
     // Log environment variables for debugging
-    log('=== Open Cowork Starting ===');
+    log(`=== ${app.name} Starting ===`);
     log('Config file:', configStore.getPath());
     log('Is configured:', configStore.isConfigured());
-    log('[Runtime] Using Open Cowork agent SDK for all providers');
+    log(`[Runtime] Using ${app.name} agent SDK for all providers`);
     log('Developer logs:', enableDevLogs ? 'Enabled' : 'Disabled');
     log('Environment Variables:');
     log('  ANTHROPIC_AUTH_TOKEN:', process.env.ANTHROPIC_AUTH_TOKEN ? '✓ Set' : '✗ Not set');
@@ -855,6 +856,9 @@ app
       });
     });
     // pi-ai handles model routing natively — no proxy warmup needed
+
+    // Apply branding before menus and tray are initialized
+    applyMainBranding();
 
     // macOS: application menu, dock menu, tray icon
     buildMacMenu();
@@ -1007,7 +1011,7 @@ app
   .catch((error) => {
     logError('[App] Startup failed:', error);
     const message = error instanceof Error ? error.message : 'Unknown startup error';
-    dialog.showErrorBox('Open Cowork 启动失败', `${message}\n\n请查看日志获取更多信息。`);
+    dialog.showErrorBox(`${app.name} 启动失败`, `${message}\n\n请查看日志获取更多信息。`);
     app.quit();
   });
 
@@ -2180,7 +2184,7 @@ ipcMain.handle('logs.export', async () => {
       });
       archive.append(
         [
-          'Open Cowork diagnostic bundle',
+          `${app.name} diagnostic bundle`,
           `Exported at: ${diagnosticsSummary.exportedAt}`,
           '',
           'Included files:',

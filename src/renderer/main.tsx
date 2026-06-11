@@ -5,6 +5,7 @@ import './styles/globals.css';
 import 'katex/dist/katex.min.css';
 import 'highlight.js/styles/github-dark-dimmed.min.css';
 import './i18n/config'; // Initialize i18n
+import { applyRendererBranding } from '@/shared/branding/brand-runtime';
 import {
   normalizeRendererLogValue,
   RendererDiagnosticsDeduper,
@@ -73,6 +74,7 @@ function installRendererDiagnostics(): void {
   });
 }
 
+applyRendererBranding();
 installRendererDiagnostics();
 
 // Note: StrictMode removed to prevent double-rendering issues with IPC

@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../hooks/useWindowSize';
+import { useBrand } from '../hooks/useBrand';
 import { RemoteControlPanel } from './RemoteControlPanel';
 import { useAppStore } from '../store';
 import { SettingsAPI } from './settings/SettingsAPI';
@@ -64,6 +65,7 @@ const VALID_TABS = new Set<TabId>([
 
 export function SettingsPanel({ onClose, initialTab = 'api' }: SettingsPanelProps) {
   const { t } = useTranslation();
+  const brand = useBrand();
   const { width } = useWindowSize();
   const compactSidebar = width < 900;
   // Read settingsTab from store at mount time so external navigation (nav-server)
@@ -172,7 +174,7 @@ export function SettingsPanel({ onClose, initialTab = 'api' }: SettingsPanelProp
               {t('settings.title')}
             </p>
             <h2 className="mt-1 text-[1.24rem] font-semibold tracking-[-0.03em] text-text-primary">
-              Open Cowork
+              {brand.productName}
             </h2>
             <p className="mt-1 text-[11px] leading-4 text-text-muted">{t('settings.panelDesc')}</p>
           </div>

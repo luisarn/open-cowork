@@ -8,6 +8,7 @@ dist-wsl-agent/
 dist-lima-agent/
 dist-mcp/
 release/
+sample/
 
 # Bundled Node.js binaries
 resources/node/
@@ -102,6 +103,11 @@ website/.vitepress/cache/
 
 # Temp directories
 .tmp/
+
+# Branding backups
+package.json.bak
+electron-builder.yml.bak
+index.html.bak
 
 # Screenshots (debug/review)
 *.png

@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAppStore } from '../store';
 import { useIPC } from '../hooks/useIPC';
+import { useBrand } from '../hooks/useBrand';
 import type { ContentBlock } from '../types';
 import { getInitialSessionTitle } from '../../shared/session-title';
 import {
@@ -28,6 +29,7 @@ import welcomeLogoSrc from '../assets/logo.png';
 
 export function WelcomeView() {
   const { t } = useTranslation();
+  const brand = useBrand();
   const [prompt, setPrompt] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -450,7 +452,7 @@ export function WelcomeView() {
             />
             <div className="text-left">
               <h1 className="text-[2.35rem] md:text-[3.1rem] leading-none font-semibold tracking-[-0.05em] text-text-primary">
-                Open Cowork
+                {brand.productName}
               </h1>
             </div>
           </div>

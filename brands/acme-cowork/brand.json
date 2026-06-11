@@ -1,0 +1,30 @@
+{
+  "$schema": "./brand-schema.json",
+  "id": "acme-cowork",
+  "productName": "ACME Cowork",
+  "appId": "com.acme.cowork",
+  "copyright": "Copyright © 2026 ACME Corporation",
+  "colors": {
+    "primary": "#2E9E5F",
+    "primaryHover": "#258C52",
+    "accent": "#E5B80B",
+    "background": "#F0FDF4",
+    "surface": "#FFFFFF",
+    "sidebarActiveBg": "#2E9E5F",
+    "sidebarActiveText": "#FFFFFF",
+    "textPrimary": "#111827",
+    "textSecondary": "#6B7280"
+  },
+  "features": {
+    "gradientTitles": true
+  },
+  "assets": {
+    "iconMac": "icon.icns",
+    "iconWin": "icon.ico",
+    "iconLinux": "icon.png",
+    "tray": "tray-icon.png",
+    "trayMac": "tray-iconTemplate.png",
+    "trayWin": "tray-icon.ico",
+    "logo": "logo.png"
+  }
+}

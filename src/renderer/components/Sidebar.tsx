@@ -2,6 +2,7 @@ import { useState, useCallback, useMemo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAppStore } from '../store';
 import { useIPC } from '../hooks/useIPC';
+import { useBrand } from '../hooks/useBrand';
 import {
   ChevronLeft,
   ChevronRight,
@@ -27,6 +28,7 @@ type SessionGroup = {
 
 export function Sidebar() {
   const { t } = useTranslation();
+  const brand = useBrand();
   const sessions = useAppStore((s) => s.sessions);
   const activeSessionId = useAppStore((s) => s.activeSessionId);
   const settings = useAppStore((s) => s.settings);
@@ -286,7 +288,7 @@ export function Sidebar() {
             />
             <div className="min-w-0">
               <h1 className="text-[1.34rem] leading-none font-semibold tracking-[-0.035em] text-text-primary">
-                Open Cowork
+                {brand.productName}
               </h1>
             </div>
           </div>

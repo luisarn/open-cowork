@@ -12,6 +12,7 @@ import {
 } from '../store/selectors';
 import { useAppStore } from '../store';
 import { useIPC } from '../hooks/useIPC';
+import { useBrand } from '../hooks/useBrand';
 import { MessageCard } from './MessageCard';
 import type { Message, ContentBlock } from '../types';
 import { Send, Square, Plus, Loader2, Plug, X, Clock } from 'lucide-react';
@@ -26,6 +27,7 @@ type AttachedFile = {
 
 export function ChatView() {
   const { t } = useTranslation();
+  const brand = useBrand();
   // Scoped selectors — each subscription only re-renders when its slice changes
   const activeSessionId = useActiveSessionId();
   const activeSession = useCurrentSession();
@@ -635,7 +637,7 @@ export function ChatView() {
         className="relative h-12 border-b border-border-muted grid grid-cols-[1fr_auto_1fr] items-center px-4 lg:px-8 bg-background/88 backdrop-blur-md"
       >
         <div className="text-[11px] font-medium tracking-[0.08em] uppercase text-text-muted">
-          Open Cowork
+          {brand.productName}
         </div>
         <h2
           ref={titleRef}
@@ -678,7 +680,7 @@ export function ChatView() {
           {displayedMessages.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-28 text-text-muted space-y-3 text-center">
               <p className="text-[11px] uppercase tracking-[0.16em] text-text-muted/80">
-                Open Cowork
+                {brand.productName}
               </p>
               <p className="text-base text-text-secondary">{t('chat.startConversation')}</p>
             </div>

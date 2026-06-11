@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAppStore } from '../../store';
+import { useBrand } from '../../hooks/useBrand';
 
 export function SettingsGeneral() {
   const { i18n, t } = useTranslation();
+  const brand = useBrand();
   const settings = useAppStore((s) => s.settings);
   const updateSettings = useAppStore((s) => s.updateSettings);
   const currentLang = i18n.language.startsWith('zh') ? 'zh' : 'en';
@@ -74,7 +76,9 @@ export function SettingsGeneral() {
       {/* About */}
       {appVer && (
         <div className="pt-4 border-t border-border">
-          <p className="text-xs text-text-muted">Open Cowork v{appVer}</p>
+          <p className="text-xs text-text-muted">
+            {brand.productName} v{appVer}
+          </p>
         </div>
       )}
     </div>
